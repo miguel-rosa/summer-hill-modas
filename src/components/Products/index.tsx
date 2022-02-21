@@ -34,6 +34,7 @@ const Products:FC<ProductsProps> = ({products}) => {
 const styles = StyleSheet.create({
   products: {
     alignSelf: "stretch",
+    backgroundColor: "#f3f3f3",
     justifyContent: "space-between",
     flex: 1
   }

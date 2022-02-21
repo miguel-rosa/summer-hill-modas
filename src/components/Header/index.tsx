@@ -2,6 +2,9 @@ import React, { FC, useContext } from "react";
 import { Text, TextInput, TouchableOpacity, View, StyleSheet } from "react-native";
 import { CartContext } from "../../contexts/CartContext";
 import { SearchContext } from "../../contexts/SearchContext";
+import IconCart from "../Icons/IconCart";
+import IconSearch from "../Icons/IconSearch";
+import { Feather } from "@expo/vector-icons";
 
 type HeaderProps = {
   name: string;
@@ -9,7 +12,7 @@ type HeaderProps = {
 
 const Header:FC<HeaderProps> = ({name}) => {
 
-  const {showCart} = useContext(CartContext);
+  const {showCart, cartItems} = useContext(CartContext);
   const {search, setSearch} = useContext(SearchContext);
 
   return (
@@ -17,16 +20,17 @@ const Header:FC<HeaderProps> = ({name}) => {
       <View style={styles.topBar}>
         <Text style={styles.name}>{name}</Text>
         <TouchableOpacity onPress={showCart}>
-          <Text>🛒</Text>
+          {cartItems.length > 0 ? <Text style={styles.cartQuantity}>{cartItems.length}</Text> : null}
+          <Feather name="shopping-cart" size={24} color="black" />
         </TouchableOpacity>
       </View>
       <View style={styles.textInputWrapper}>
-      <Text>🔎</Text>
+      <Feather name="search" size={24} color="black"/>
       <TextInput
           style={styles.textInput}
           onChangeText={text => setSearch(text)}
           value={search}
-          placeholder=" Search for products"
+          placeholder="O que você quer comprar?"
       />
       { search ?
         <TouchableOpacity style={styles.clean} onPress={() => setSearch("")}>
@@ -57,9 +61,23 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginVertical:10
   },
+  cartQuantity: {
+    width:16,
+    height:16,
+    zIndex:2,
+    position: "absolute",
+    right:-10,
+    top:-10,
+    textAlign:"center",
+    backgroundColor: "#1cea87",
+    borderRadius: 50,
+    color: "black",
+    fontFamily: "Montserrat_500",
+    fontSize:10
+  },
   name: {
     fontSize:18,
-    fontWeight:"700"
+    fontFamily:"Montserrat_700"
   },
   textInputWrapper: {
     backgroundColor: "#f1f1f1",
@@ -71,8 +89,11 @@ const styles = StyleSheet.create({
     borderRadius:8
   },
   textInput: {
-    fontSize: 18,
-    paddingHorizontal:8
+    fontSize: 16,
+    alignSelf: "stretch",
+    flex:1,
+    paddingHorizontal:8,
+    fontFamily:"Montserrat_500"
   },
   clean: {
     position:"absolute",

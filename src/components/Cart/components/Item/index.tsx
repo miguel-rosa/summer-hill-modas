@@ -1,6 +1,7 @@
 import React, {FC, useContext} from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { CartContext } from "../../../../contexts/CartContext";
+import { Feather } from '@expo/vector-icons';
 
 type ItemProps = {
   id: string,
@@ -21,7 +22,7 @@ const Item:FC<ItemProps> = ({
       <Image style={styles.image} source={{uri:image}}/>
       <Text style={styles.name}>{name}</Text>
       <TouchableOpacity style={styles.remove}onPress={() => removeItemFromCart(id)}>
-        <Text style={styles.removeText}>&times;</Text>
+        <Feather name="trash-2" color="black" size={18}/>
       </TouchableOpacity>
     </View>
   )
@@ -30,8 +31,6 @@ const Item:FC<ItemProps> = ({
 const styles = StyleSheet.create({
   item:{
     flexDirection: "row",
-    alignSelf: "stretch",
-    flex:1,
     marginBottom:10
   },
   image:{
@@ -40,16 +39,15 @@ const styles = StyleSheet.create({
     borderRadius:8
   },
   name:{
-    fontSize: 18,
-    marginLeft: 20
+    fontSize: 14,
+    marginLeft: 20,
+    maxWidth:250,
+    fontFamily:"Montserrat_500"
   },
   remove: {
     right: 0,
     position: "absolute",
     alignSelf:"center"
-  },
-  removeText: {
-    fontSize: 28
   }
 });
 

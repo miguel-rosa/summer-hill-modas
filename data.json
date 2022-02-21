@@ -1,71 +1,39 @@
 {
-  "name": "Summer Hill Modas",
+  "store":{
+      "name": "Summer Hill Modas",
+      "whatsappNumber": "5511950465529"
+  },
   "products": 
   [
       {
           "id":1,
-          "name": "Biquíniz",
+          "name": "Biquíni Laranja",
           "image":"http://www.maniadpraia.com.br/images/colecao_2020/5.jpg"
       },
       {   
           "id":2,
-          "name": "Biquíni",
+          "name": "Biquíni estampado por do sol com palmeiras",
           "image":"http://www.maniadpraia.com.br/images/colecao_2020/43.jpg"
       },
       {
-          "id":3,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/6.jpg"
-      },
-      {
-          "id":4,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/7.jpg"
-      },
-      {
           "id":5,
-          "name": "Biquíni",
+          "name": "Biquíni estampado com saia",
           "image":"http://www.maniadpraia.com.br/images/colecao_2020/8.jpg"
       },
       {
-          "id":6,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/9.jpg"
-      },
-      {
           "id":7,
-          "name": "Biquíni",
+          "name": "Biquíni estampado amarelo",
           "image":"http://www.maniadpraia.com.br/images/colecao_2020/10.jpg"
       },
       {
-          "id":8,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/41.jpg"
-      },
-      {
-          "id":9,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/42.jpg"
-      },
-      {
-          "id":10,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/63.jpg"
-      },
-      {
           "id":11,
-          "name": "Biquíni",
+          "name": "Biquíni estampado neon",
           "image":"http://www.maniadpraia.com.br/images/colecao_2020/44.jpg"
       },
       {
           "id":12,
-          "name": "Biquíni",
+          "name": "Biquíni cortina amarelo neon",
           "image":"http://www.maniadpraia.com.br/images/colecao_2020/45.jpg"
-      },
-      {
-          "id":13,
-          "name": "Biquíni",
-          "image":"http://www.maniadpraia.com.br/images/colecao_2020/48.jpg"
       }
   ]
   

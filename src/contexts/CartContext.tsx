@@ -1,4 +1,4 @@
-import React, { FC, createContext, useState } from "react";
+import React, { FC, createContext, useState, useEffect } from "react";
 
 type CartItem = {
   id: string;

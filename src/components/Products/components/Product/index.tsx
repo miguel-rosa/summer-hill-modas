@@ -1,6 +1,7 @@
 import React, { FC, useContext } from "react";
 import {View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { CartContext } from "../../../../contexts/CartContext";
+import { FontAwesome } from '@expo/vector-icons';
 
 export type ProductProps = {
   id: string;
@@ -23,8 +24,8 @@ const Product:FC<ProductProps> = ({
         style={styles.buyButton}
         onPress={() => addItemToCart({item:{id, name, image}, showCartWhenAdd:true})}
       >
-        <Text>
-          Comprar agora
+        <Text style={styles.buyButtonText}>
+          <FontAwesome name="whatsapp" size={18}/> Comprar agora
         </Text>
       </TouchableOpacity>
     </View>
@@ -39,14 +40,15 @@ const styles = StyleSheet.create({
   },
   image:{
     alignSelf: "stretch",
-    height: 250,
+    height: 210,
     minWidth: 150,
     borderRadius: 8
   },
   name:{
-    fontSize: 18,
-    fontWeight: "700",
-    paddingVertical: 8
+    fontSize: 14,
+    fontFamily:"Montserrat_500",
+    paddingVertical: 14,
+    minHeight: 70
   },
   buyButton: {
     backgroundColor: "#1cea87",
@@ -54,6 +56,9 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems: "center",
     borderRadius: 8
+  },
+  buyButtonText: {
+    fontFamily:"Montserrat_500"
   }
 })
 
